@@ -16,3 +16,5 @@ export_on_save:
 更多的内容...
 
 aaaaa啊啊7777啊富士康妇女
+
+![There is a PHTOT](/photos/articles/testphoto.png)
