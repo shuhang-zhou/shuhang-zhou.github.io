@@ -9,6 +9,7 @@
 <body>
     <div class="container">
         <div class="loader"></div>
+        <span class="explore-text">点击圆圈开启探索</span> <!-- 新添加的行 -->
         <span class="text">Welcome</span>
     </div>
    
@@ -17,7 +18,7 @@
     document.addEventListener('DOMContentLoaded', function() {
         var loader = document.querySelector('.loader');
         var text = document.querySelector('.text');
-    
+        
         loader.addEventListener('mouseenter', function() {
             // 延迟显示text
             text.style.opacity = 1;
@@ -39,7 +40,7 @@
             setTimeout(function() {
                 // 延迟跳转页面
                 window.location.href = 'main.html';
-            }, 300); // 500毫秒后执行，根据需要调整
+            }, 200); // 200毫秒后执行，根据需要调整
         });
         
         document.addEventListener('mouseup', function() { // 监听文档级别的mouseup事件
@@ -47,6 +48,27 @@
     });
 
     });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    var languages = ["点击圆圈开启探索", "Click the circle to explore", "Cliquez sur le cercle pour explorer"];
+    var exploreText = document.querySelector('.explore-text');
+    var currentIndex = 0;
+
+    exploreText.style.opacity = 1; // 初始化使第一条语言可见 
+
+    setInterval(function() {
+        exploreText.style.opacity = 0; // 先淡出当前语言
+
+        setTimeout(function() {
+            // 更新文本为下一种语言
+            currentIndex = (currentIndex + 1) % languages.length;
+            exploreText.textContent = languages[currentIndex];
+
+            exploreText.style.opacity = 1; // 然后淡入新的语言
+        }, 1800); // 确保淡出完成后再更改文本内容，这里的延迟应小于或等于CSS中的过渡时间
+    }, 4000); // 每4秒切换一次语言
+});
     </script>
     
     
