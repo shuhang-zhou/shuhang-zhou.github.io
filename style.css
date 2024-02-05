@@ -9,7 +9,7 @@ body{
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: #000;dis
+    background: #000;
 }
 
 .container {
@@ -21,13 +21,21 @@ body{
 }
 
 .loader {
-    position: absolute;
+    position: relative;
     width: 150px;
     height: 150px;
     border-radius: 50%;
     background: linear-gradient(45deg, transparent, transparent 40%, #e5f403);
     animation: animate 2s linear infinite;
     cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s; /* 平滑过渡效果 */
+}
+
+.loader:active {
+    transform: scale(0.95); /* 稍微缩小，模拟按下效果 */
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.6); /* 使用更亮的阴影颜色 */
+    border: 2px solid rgba(255, 255, 255, 0.5); /* 添加亮色边框以增加对比 */
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.2), transparent 40%, rgba(255, 255, 255, 0.2)); /* 调整背景色以增强效果 */
 }
 
 @keyframes animate {
@@ -73,14 +81,23 @@ body{
     color: rgb(52, 222, 18);
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) scale(1);
     z-index: 200;
     opacity: 0; /* 初始透明度为0，即完全透明 */
     visibility: hidden; /* 初始不可见 */
-    transition: opacity 0.3s, visibility 0.3s; /* 过渡效果应用于opacity和visibility */
+    transition: opacity 0.3s ease, visibility 0.3s ease, font-size 0.5s ease, font-weight 0.5s ease; /* 过渡效果应用于opacity和visibility, 添加transform过渡效果 */
+    transform-origin: center;
 }
 
-.loader:hover .text {
+.text-grow { /* 定义点击时文本变化的样式 */
+    transform: translate(-50%, -50%) scale(1.2); /* 同时应用平移和缩放 */
+    opacity: 1; /* 确保显示 */
+    visibility: visible; /* 确保可见 */
+    font-size: 24px; /* 变大 */
+}
+
+.loader:hover .text,
+.loader:active .text {
     opacity: 1; /* 悬停时完全不透明 */
     visibility: visible; /* 悬停时可见 */
     transition-delay: 0.3s; /* 添加延迟 */

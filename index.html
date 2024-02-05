@@ -29,12 +29,23 @@
             text.style.opacity = 0;
             text.style.visibility = "hidden";
         });
-    
-        // 添加点击事件监听器
-        loader.addEventListener('click', function() {
-            // 页面跳转到main.html
-            window.location.href = 'main.html';
+        loader.addEventListener('mousedown', function() {
+            text.classList.add('text-grow'); // 在点击时添加类
+            // 可以在这里应用任何想要的点击效果，如改变背景色等
+            // 由于你的`.loader`已经有了`:active`的CSS效果，这里可能不需要额外的JS
         });
+
+        loader.addEventListener('mouseup', function() {
+            setTimeout(function() {
+                // 延迟跳转页面
+                window.location.href = 'main.html';
+            }, 300); // 500毫秒后执行，根据需要调整
+        });
+        
+        document.addEventListener('mouseup', function() { // 监听文档级别的mouseup事件
+        text.classList.remove('text-grow'); // 移除类
+    });
+
     });
     </script>
     
