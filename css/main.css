@@ -6,6 +6,7 @@ body {
 .side-bar {
     float: left;
     width: 30%;
+    position: fixed;
 }
 
 .side-bar > * {
@@ -22,16 +23,18 @@ body {
 
 .side-bar .nav a:hover,
 .side-bar .tag-list a:hover {
-    color: blueviolet;
+    color: violet;
 }
 
 .side-bar .nav a {
     font-weight: 700;
 }
 
+/* 对右侧栏目进行编辑*/
 .main {
     float: right;
     width: 70%;
+    color: #555;
 }
 
 .header .logo {
@@ -42,6 +45,42 @@ body {
     display: inline-block;
     margin-bottom: 10px;
 }
+
+.article-list {
+    /* 设置边距 */
+    margin-right: 20%;
+    background: #fff;
+    padding: 20px 30px;
+    /* 设置阴影 */
+    box-shadow: 0 0 3px rgba(0,0,0,0.2);
+}
+
+/* 给上下文章之间设定一些边距 */
+.article-list .item {
+    margin-bottom: 25px;
+}
+
+.article-list .item .title {
+    color: black;
+    font-size: 20px;
+    font-weight: 700;
+    transition: color 200ms;
+}
+
+/* 指定悬停变色一定要是在 .item 上而不是在 .title 上 */
+.article-list .item a.title:hover {
+    color: violet;
+}
+
+.article-list .item .status {
+    font-size: 13px;
+    color: #b7b3b3;
+}
+
+.article-list .item > * {
+    margin: 10px 0;
+}
+
 
 a {
     text-decoration: none;
