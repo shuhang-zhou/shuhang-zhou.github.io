@@ -1,5 +1,5 @@
 <!DOCTYPE html><html><head>
-      <title>test</title>
+      <title>useful_tools</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
@@ -24,15 +24,46 @@
     
       <div class="crossnote markdown-preview  ">
       
-<h1 id="我的旅行日志">我的旅行日志 </h1>
-<p>这是我的旅行日志内容...</p>
-<h2 id="第一天">第一天 </h2>
-<ul>
-<li>访问了某某地方</li>
-<li>拍了很多照片</li>
-</ul>
-<p>更多的内容...</p>
-<p>aaaaa啊啊7777啊富士康妇女</p>
+<h1 id="内容搭建小工具">内容搭建小工具 </h1>
+<p>这里记录一些在搭建网站内容的时候，用到的一些小工具。</p>
+
+<div class="md-toc">
+<details style="padding:0;;padding-left:0px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#内容搭建小工具" class="md-toc-link"><p>内容搭建小工具</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#画质增强工具" class="md-toc-link">
+            <p>画质增强工具</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#图片压缩-转化" class="md-toc-link">
+            <p>图片压缩、转化</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#续批量画质增强脚本" class="md-toc-link">
+            <p>续：批量画质增强脚本</p>
+
+          </a></div>
+        </div>
+      </details>
+    
+</div>
+<h2 id="画质增强工具">画质增强工具 </h2>
+<p>Real-ESRGAN 开源工具，它提供了绿色版exe文件。地址<a href="https://github.com/xinntao/Real-ESRGAN">https://github.com/xinntao/Real-ESRGAN</a>，直接下载对应的版本即可。</p>
+<p>对于Windows，下载后在终端输入命令</p>
+<pre data-role="codeBlock" data-info="cmd" class="language-cmd cmd"><code>//定位到.exe 所在文件夹
+cd .\realesrgan-ncnn-vulkan-20220424-windows
+</code></pre><pre data-role="codeBlock" data-info="cmd" class="language-cmd cmd"><code>//将input.jpg 画质增强并储存到 output.png
+./realesrgan-ncnn-vulkan.exe -i input.jpg -o output.png
+</code></pre><p>Real-ESRGAN 功能强大，有多种画质增强模型，还有视频增强功能。但是只能逐个增强，后续会介绍一个小的脚本，用于批量进行突变画质增强。编写自 @ChatGPT 。</p>
+<h2 id="图片压缩-转化">图片压缩、转化 </h2>
+<p>Imagine 开源工具，作为桌面APP并有用户友好的UI界面（有简体中文），pngquant，mozjpeg，WebP，Electron 的集大成者。地址<a href="https://github.com/meowtec/Imagine">https://github.com/meowtec/Imagine</a>，下载对应版本。</p>
+<p>操作简单明了，不再赘述。</p>
+<h2 id="续批量画质增强脚本">续：批量画质增强脚本 </h2>
+<p>aaaaa啊啊7777啊富士康</p>
 <p><img src="..\photos\articles\testphoto.png" alt="There is a PHTOT"></p>
 
       </div>
