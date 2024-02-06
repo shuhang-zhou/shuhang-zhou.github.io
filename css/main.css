@@ -1,0 +1,52 @@
+body {
+    background: #93f4b7;
+    line-height: 1.7;
+}
+
+.side-bar {
+    float: left;
+    width: 30%;
+}
+
+.side-bar > * {
+    padding: 10px 15px;
+}
+
+.side-bar .nav a,
+.side-bar .tag-list a {
+    display: block; /*占母元素整宽*/
+    padding: 5px 15px;
+    color: rgb(0, 0, 0);
+    transition: color 200ms;
+}
+
+.side-bar .nav a:hover,
+.side-bar .tag-list a:hover {
+    color: blueviolet;
+}
+
+.side-bar .nav a {
+    font-weight: 700;
+}
+
+.main {
+    float: right;
+    width: 70%;
+}
+
+.header .logo {
+    line-height: 1;
+    border: 5px solid rgb(0, 0, 0);
+    padding: 10px 20px;
+    font-size: 15px;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+a {
+    text-decoration: none;
+}
+
+a, body {
+    color: rgb(0, 0, 0);
+}
