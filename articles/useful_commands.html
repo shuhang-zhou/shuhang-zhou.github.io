@@ -70,7 +70,16 @@ export_on_save:
 <pre data-role="codeBlock" data-info="html" class="language-html html"><code><span class="token comment">&lt;!--
     code
 --&gt;</span>
-</code></pre><h2 id="css">CSS </h2>
+</code></pre><ul>
+<li>源代码中<code>&lt;div&gt;</code>元素内文本换行但不想在HTML中出现空格，可以使用注释来取消空格。</li>
+</ul>
+<pre data-role="codeBlock" data-info="html" class="language-html html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>content<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+这里有一段文字。123<span class="token comment">&lt;!--
+--&gt;</span>123这里有一段文字。
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+
+</code></pre><p>这样两个123之间就不会有空格了。</p>
+<h2 id="css">CSS </h2>
 <ul>
 <li>使用以下代码注释</li>
 </ul>
