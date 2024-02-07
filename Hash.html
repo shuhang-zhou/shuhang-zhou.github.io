@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>文章密码保护</title>
+<style>
+    /* CSS样式 */
+    .item_password-protected {
+        display: none;
+    }
+    .password-input {
+        margin: 20px 0;
+    }
+</style>
+</head>
+<body>
+
+<div class="password-input">
+    <label for="password">请输入密码查看文章:</label>
+    <input type="password" id="password" name="password">
+    <button onclick="checkPassword()">提交</button>
+</div>
+
+<div class="item_password-protected">
+    <a href="./articles/wechat_analyse_2023.html" class="title">2023微信聊天年度总结</a>
+    <div class="status">发布于：2024-02-07 | 阅读：3500 | 标签1</div>
+    <div class="content">
+        <!-- 文章内容 -->
+    </div>
+</div>
+
+<script>
+async function checkPassword() {
+    const userPassword = document.getElementById('password').value;
+    const encoder = new TextEncoder();
+    const data = encoder.encode(userPassword);
+    const hash = await crypto.subtle.digest('SHA-256', data);
+    const hashArray = Array.from(new Uint8Array(hash)); // 将buffer转换为byte array
+    const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+    
+    // 预先计算好的密码的SHA-256哈希值
+    const correctHash = "ad9d683680c647da367f428b8a51f84c198b6330c637fb581f1b6291fb211975"; // 替换为你的哈希值
+
+    if (hashHex === correctHash) {
+        document.querySelector('.item_password-protected').style.display = 'block';
+        document.querySelector('.password-input').style.display = 'none';
+    } else {
+        alert('密码错误，请重新输入！');
+    }
+}
+</script>
+
+</body>
+</html>
