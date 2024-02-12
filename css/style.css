@@ -107,7 +107,7 @@ body{
     color: #FFF; /* 文字颜色，根据需要调整 */
     text-align: center; /* 文本居中 */
     position: absolute; /* 绝对定位 */
-    bottom: 50px; /* 调整至圆圈下方的具体位置 */
+    bottom: 10%; /* 调整至圆圈下方的具体位置 */
     left: 50%; /* 水平居中 */
     transform: translateX(-50%); /* 确保水平居中的精确度 */
     font-size: 20px; /* 字体大小，根据需要调整 */
