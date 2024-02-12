@@ -1,12 +1,18 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     background: #93f4b7;
     line-height: 1.7;
 }
 
 .side-bar {
-    float: left;
-    width: 30%;
+    width: 200px;
     position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
 }
 
 .side-bar > * {
@@ -16,6 +22,7 @@ body {
 .side-bar .nav a,
 .side-bar .tag-list a {
     display: block; /*占母元素整宽*/
+    text-align: center;
     padding: 5px 15px;
     color: rgb(0, 0, 0);
     transition: color 200ms;
@@ -32,8 +39,7 @@ body {
 
 /* 对右侧栏目进行编辑*/
 .main {
-    float: right;
-    width: 70%;
+    margin-left: 200px;
     color: #555;
 }
 
@@ -88,4 +94,10 @@ a {
 
 a, body {
     color: rgb(0, 0, 0);
+}
+
+/* 关闭移动端新建的menu-checkbox */
+#menu-toggle,
+#menu-checkbox {
+    display: none;
 }

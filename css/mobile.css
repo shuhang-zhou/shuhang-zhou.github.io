@@ -1,0 +1,39 @@
+.side-bar {
+    position: relative;
+    width: 100%;
+    float: none;
+}
+
+.main {
+    width: 100%;
+    margin-left: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.article-list {
+    margin: 0;
+}
+
+.side-bar .nav,
+.side-bar .tag-list {
+    
+    display: none;
+    text-align: center;
+}
+
+
+#menu-checkbox:checked ~ .nav,
+#menu-checkbox:checked ~ .tag-list {
+    display: block;
+}
+
+#menu-toggle {
+    display: block;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 15px;
+    font-weight: 500;
+    color: rgba(rgb(255, 0, 0), rgb(0, 255, 0), rgb(0, 0, 255), 0.7);
+}
