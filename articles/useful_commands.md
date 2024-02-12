@@ -44,3 +44,7 @@ export_on_save:
 ```css
 /* 占母元素整宽 */
 ```
+
+* 注释使用`ctrl +/`快捷键
+
+* margin和padding的区别：margin是外边距，padding是内边距。
