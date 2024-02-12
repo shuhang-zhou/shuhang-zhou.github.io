@@ -49,8 +49,8 @@
     });
 
     });
-    </script>
-    <script>
+</script>
+<script>
         document.addEventListener('DOMContentLoaded', function() {
     var languages = ["点击圆圈开启探索", "Click the circle to explore", "Cliquez sur le cercle pour explorer"];
     var exploreText = document.querySelector('.explore-text');
@@ -70,9 +70,30 @@
         }, 1800); // 确保淡出完成后再更改文本内容，这里的延迟应小于或等于CSS中的过渡时间
     }, 4000); // 每4秒切换一次语言
 });
-    </script>
+</script>
 
-
+<!-- 动态观测页面高度的变化以适应地址栏 -->
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        function adjustElementPosition() {
+            var exploreText = document.querySelector('.explore-text');
+            if (exploreText) {
+                // 获取视窗高度
+                var viewportHeight = window.innerHeight;
+                // 计算距离底部的距离，20%的视窗高度
+                var bottomDistance = viewportHeight * 0.10;
+                // 设置`.explore-text`的`bottom`样式属性
+                exploreText.style.bottom = bottomDistance + 'px';
+            }
+        }
+    
+        // 调整位置
+        adjustElementPosition();
+    
+        // 监听窗口尺寸变化事件，以适应地址栏的显示和隐藏
+        window.addEventListener('resize', adjustElementPosition);
+    });
+</script>
 
     
     
