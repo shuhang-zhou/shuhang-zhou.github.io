@@ -1,0 +1,5 @@
+.container .text {
+    /* 不能滥用important 啊！ */
+    opacity: 1 ;
+    visibility: visible ;
+}
